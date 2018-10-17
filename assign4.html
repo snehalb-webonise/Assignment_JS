@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script src="text/javascript">
+      var DataArray = [];
+      function submit() {
+          var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+          var user_name = document.getElementById("user_name").value;
+          var email = document.getElementById("email").value;
+          var time = new Date().getTime();
+          
+         if (!(email.match(mailformat))) {
+            alert("Invalid email address!");
+            return false;
+          }
+
+         else {
+            alert("You have entered an valid email address!");
+            DataArray.push(user_name, email, time);
+            localStorage.setItem("Data", JSON.stringify(DataArray));
+            alert("done");
+           }
+       }
+
+      function showusers() {       
+          document.write("<table border=1 border-collapse=collapse>");
+          document.write("<tr>");
+          document.write("<th>Name</th>");
+          document.write("<th>Email</th>");
+          document.write("<th>Time</th>");
+          document.write("</tr>");
+
+          var data = localStorage.getItem("Data").split(',');
+
+          for (var i = 0; i< data.length; i++) 
+          {
+            document.write("<tr>");
+            document.write("<td>"+data[i]+"</td>");
+            document.write("<td>"+data[++i]+"</td>");
+            document.write("<td>"+data[++i]+"</td>");   
+            document.write("</tr>");
+          }
+          document.write("</table>");
+
+      }
+
+    </script>
+
+    <label>User Name</label>
+    <input type="text"  id ="user_name"></input>
+    <br><br>
+    <label>Email ID</label>
+    <input type="email"  placeholder="abc.12@gmail.com" id ="email"></input>
+     <br><br>
+
+    <input type="button" onclick="submit()" value ="Submit"></input>
+
+     <input type="button" onclick="showusers()" value ="Show Users"></input>
+   
+
+  </body>
+</html>

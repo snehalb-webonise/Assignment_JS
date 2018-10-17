@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script type="text/javascript">
+      function addition()
+      {
+        var num1 = parseInt(document.getElementById("number1").value);
+        var num2 =parseInt(document.getElementById("number2").value);
+        var res = num1 + num2;
+        document.getElementById("result").innerHTML = "Addition is"+ res;
+      }
+
+      function substraction(){
+        var num1 =parseInt(document.getElementById("number1").value);
+        var num2 = parseInt(document.getElementById("number2").value);
+        var res = num1 - num2;
+        document.getElementById("result").innerHTML ="substraction is" + res;
+      }
+    
+    </script>
+    <input type = "text" id = "number1"></input>
+    <input type = "text" id = "number2"></input>
+    <input type = "button" onclick="addition()" id="add" value="ADD"></input>
+    <input type = "button" onclick="substraction()"  id ="sub" value="SUB"></input>
+    <span id="result"></span>
+
+  </body>
+</html>

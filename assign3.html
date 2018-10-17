@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script type="text/javascript">
+    
+      var time1,time2,time3,time4;
+
+      function openwindow()
+      {
+          var window1 =  window.open('http://google.com');
+          var window2 =  window.open('http://youtube.com');
+          var window3 =  window.open('http://github.com');
+          var window4 =  window.open('https://www.amazon.in');
+           
+          time1 = setTimeout(function(){ window1.window.close() }, 2000);
+          time2 = setTimeout(function(){ window2.window.close() }, 3000);
+          time3 = setTimeout(function(){ window3.window.close() }, 4000);
+          time4 = setTimeout(function(){ window4.window.close() }, 5000);
+      }
+
+      function stopwindow(){
+          clearTimeout(time1);
+          clearTimeout(time2);
+          clearTimeout(time3);
+          clearTimeout(time4);
+      }
+    
+    </script>
+    <input type="button" onclick="openwindow()" value ="open">
+    <input type="button" onclick="stopwindow()" value ="pause">
+
+  </body>
+</html>
