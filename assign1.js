@@ -7,7 +7,7 @@ for(let i=0;i<x;i++){
 }
 console.log(number);
 
-for(let i =0; i < number.length;i++){
- 	 count[number[i]] = (count[number[1]] || 0)+1;
-}
+number.forEach(function(i) { count[i] = (count[i]||0) + 1;});
+
+
 console.log(count);

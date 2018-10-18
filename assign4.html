@@ -7,14 +7,14 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <script src="text/javascript">
+    <script type="text/javascript">
       var DataArray = [];
-      function submit() {
+      function submitData() {
           var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
           var user_name = document.getElementById("user_name").value;
           var email = document.getElementById("email").value;
           var time = new Date().getTime();
-          
+
          if (!(email.match(mailformat))) {
             alert("Invalid email address!");
             return false;
@@ -28,7 +28,7 @@
            }
        }
 
-      function showusers() {       
+      function showusers() {
           document.write("<table border=1 border-collapse=collapse>");
           document.write("<tr>");
           document.write("<th>Name</th>");
@@ -38,12 +38,12 @@
 
           var data = localStorage.getItem("Data").split(',');
 
-          for (var i = 0; i< data.length; i++) 
+          for (var i = 0; i< data.length; i++)
           {
             document.write("<tr>");
             document.write("<td>"+data[i]+"</td>");
             document.write("<td>"+data[++i]+"</td>");
-            document.write("<td>"+data[++i]+"</td>");   
+            document.write("<td>"+data[++i]+"</td>");
             document.write("</tr>");
           }
           document.write("</table>");
@@ -59,10 +59,10 @@
     <input type="email"  placeholder="abc.12@gmail.com" id ="email"></input>
      <br><br>
 
-    <input type="button" onclick="submit()" value ="Submit"></input>
+    <input type="button" onclick="submitData()" value ="Submit"></input>
 
      <input type="button" onclick="showusers()" value ="Show Users"></input>
-   
+
 
   </body>
 </html>
